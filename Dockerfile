@@ -1,5 +1,8 @@
-FROM nginx:latest
+FROM node
 
-WORKDIR /usr/share/nginx/html
+COPY nodeServer.js .
+COPY index.html .
 
-COPY index.html index.html
+EXPOSE 8000
+
+CMD node nodeServer.js
